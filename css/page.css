@@ -1,0 +1,13 @@
+/* 셋팅 페이지 */
+.settingPage{ position: relative;
+    & h2{margin-bottom: 23px;}
+    & figure{text-align: center; margin-bottom: 30px;
+        & img{width: 72px; border-radius: 30px; margin-bottom: 8px;}
+        & figcaption{font-size: 16px; font-weight: 700; line-height: 23px;}
+    }
+    & ul li{
+        & a{display: block; font-size: 13px; font-weight: 500; line-height: 19px;}
+        &:not(:last-child){margin-bottom: 20px;}
+    }
+    & button{position: absolute; right: var(--spasing); top: 44px;}
+}

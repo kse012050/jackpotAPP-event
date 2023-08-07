@@ -1,0 +1,28 @@
+/* 접근성 */
+.textHidden{height: 0.01px; overflow: hidden;}
+
+/* 포인트 색상 */
+mark{color: var(--colorPoint);}
+
+/* 이미지 */
+[class^="imgBox"]{aspect-ratio: 1; background-repeat: no-repeat; background-position: center; background-size: cover; text-indent: -9999px;}
+[class^="imgBox"][class$="setting"]{width: 18px; background-image: url('../images/icon-setting.png');}
+
+[class$="Page"]{padding: 0 var(--spasing) 58px;
+    & h2{padding-top: 9px; font-size: 18px; font-weight: 700;}
+}
+
+
+/* 해더 */
+header{position: fixed; left: 0; bottom: 0; width: 100%; background-color: #f9f9f9; z-index: 100;
+    & nav ul{display: flex; padding-inline: var(--spasing);
+        & li{ flex: 1;
+            & a{display: block; font-size: 11px; line-height: 17px; text-align: center; padding-block: 33px 8px; background-repeat: no-repeat; background-position: center top 11px; background-size: auto 18px;}
+            &:nth-child(1) a{background-image: url('../images/menu01.png');}
+            &:nth-child(2) a{background-image: url('../images/menu02.png');}
+            &:nth-child(3) a{background-image: url('../images/menu03.png');}
+            &:nth-child(4) a{background-image: url('../images/menu04.png');}
+            &:nth-child(5) a{background-image: url('../images/menu05.png');}
+        }
+    }
+}
