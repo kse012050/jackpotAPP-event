@@ -1,7 +1,7 @@
 $(document).ready(function(){
     // 콤마
     $('[data-comma]').length && comma()
-    
+
     // 텝
     $('.tabBtns').length && tab()
 })
@@ -19,10 +19,11 @@ function addCommas(number) {
 
 // 텝
 function tab(){
-    $('.tabBtns > *, .tabContents > *').first().addClass('active');
+    $('.tabBtns > *').first().addClass('active');
+    // $('.tabContents > *').first().addClass('active');
     $('.tabBtns > *').click(function(){
         $('.tabBtns > *, .tabContents > *').removeClass('active');
         $(this).addClass('active');
-        $('.tabContents > *').eq($(this).index()).addClass('active');
+        // $('.tabContents > *').eq($(this).index()).addClass('active');
     })
 }
