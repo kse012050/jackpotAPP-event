@@ -28,8 +28,8 @@ mark{color: var(--colorPoint);}
 
 /* 텝 버튼 */
 .tabBtns{display: flex; align-items: center; margin-block: 25px 10px;
-    & li{font-size: 13px; color: #929292; line-height: 28px; padding-inline: 12px; border: 1px solid #929292; border-radius: 100em; cursor: pointer;
-        &.active{color: white; background-color: var(--colorPoint); border: none;}
+    & li{font-size: 13px; color: #929292; line-height: 28px; padding-inline: 12px; border: 1px solid #929292; border-radius: 100em; cursor: pointer;;
+        &.active{color: white; background-color: var(--colorPoint); border-color: var(--colorPoint);}
         &:not(:last-child){margin-right: 5px;}
     }
 }
@@ -69,8 +69,10 @@ mark{color: var(--colorPoint);}
 .popupBox{position: fixed; inset: 0; z-index: 101; padding: 22.2222vw 11.1111vw; background-color: rgba(0, 0, 0, 0.5); box-sizing: border-box; overflow: auto;
     & > div{background-color: white;
         & img{width: 100%;}
-        & button{border-radius: 1.6666vw; vertical-align: middle;}
-        & > :is(button , a){display: block; font-size: 3.6111vw; font-weight: 500; color: white; width: calc(100% - 7.2222vw); height: 11.6666vw; background-color: var(--colorBG); margin: 6.1111vw auto;}
+        & :is(button , a){border-radius: 1.6666vw;}
+        & > a{display: flex; justify-content: center; align-items: center;}
+        & > button{display: block;}
+        & > :is(button , a){font-size: 3.6111vw; font-weight: 500; color: white; width: calc(100% - 7.2222vw); height: 11.6666vw; background-color: var(--colorBG); margin: 6.1111vw auto;}
         & div{display: flex; justify-content: space-between; align-items: center; padding: 1.6666vw 5vw; background-color: #f1f1f1;
             & input[type="checkbox"]{display: none;
                 & + label{font-size: 3.6111vw; line-height: 4.7222vw; display: flex; align-items: center;
@@ -92,7 +94,9 @@ header{position: fixed; left: 0; bottom: 0; width: 100%; background-color: #f9f9
             &:nth-child(2) a{background-image: url('../images/menu02.png');}
             &:nth-child(3) a{background-image: url('../images/menu03.png');}
             &:nth-child(4) a{background-image: url('../images/menu04.png');}
+            &:nth-child(4).active a{background-image: url('../images/menu04-active.png');}
             &:nth-child(5) a{background-image: url('../images/menu05.png');}
+            &:nth-child(5).active a{background-image: url('../images/menu05-active.png');}
         }
     }
 }

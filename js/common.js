@@ -2,6 +2,9 @@ $(document).ready(function(){
     // 콤마
     $('[data-comma]').length && comma();
 
+    // 이전 페이지 링크
+    $('[data-prevLink]').length && prevLink();
+
     // 텝
     $('.tabBtns').length && tab();
 
@@ -11,16 +14,6 @@ $(document).ready(function(){
     // 뉴스 상세페이지
     $('.newsDetailPage').length && newsDetailPage();
 })
-
-// 팝업
-function popup(){
-    $('.popupBox, .popupBox > div > div button').click(function(){
-        $('.popupBox').css('display','none');
-    })
-    $('.popupBox > div').click(function(e){
-        e.stopPropagation();
-    })
-}
 
 
 // 콤마
@@ -33,6 +26,14 @@ function addCommas(number) {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+// 이전 페이지 링크
+function prevLink(){
+    $('[data-prevLink]').click(function(e){
+        e.preventDefault();
+        window.history.back();
+    })
+}
+
 // 텝
 function tab(){
     $('.tabBtns > *').first().addClass('active');
@@ -41,6 +42,16 @@ function tab(){
         $('.tabBtns > *, .tabContents > *').removeClass('active');
         $(this).addClass('active');
         // $('.tabContents > *').eq($(this).index()).addClass('active');
+    })
+}
+
+// 팝업
+function popup(){
+    $('.popupBox, .popupBox > div > div button').click(function(){
+        $('.popupBox').css('display','none');
+    })
+    $('.popupBox > div').click(function(e){
+        e.stopPropagation();
     })
 }
 
