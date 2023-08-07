@@ -65,6 +65,23 @@ mark{color: var(--colorPoint);}
     &.active{display: block;}
 } */
 
+/* 팝업 */
+.popupBox{position: fixed; inset: 0; z-index: 101; padding: 22.2222vw 11.1111vw; background-color: rgba(0, 0, 0, 0.5); box-sizing: border-box; overflow: auto;
+    & > div{background-color: white;
+        & img{width: 100%;}
+        & button{border-radius: 1.6666vw; vertical-align: middle;}
+        & > :is(button , a){display: block; font-size: 3.6111vw; font-weight: 500; color: white; width: calc(100% - 7.2222vw); height: 11.6666vw; background-color: var(--colorBG); margin: 6.1111vw auto;}
+        & div{display: flex; justify-content: space-between; align-items: center; padding: 1.6666vw 5vw; background-color: #f1f1f1;
+            & input[type="checkbox"]{display: none;
+                & + label{font-size: 3.6111vw; line-height: 4.7222vw; display: flex; align-items: center;
+                    &::before{content: ''; width: 4.4444vw; aspect-ratio: 1; background-color: black; margin-right: 1.6666vw; background-repeat: no-repeat; background-position: center; background-size: cover;}
+                }
+                &:checked + label::before{background-image: url('../images/on.png');}
+            }
+            & button{font-size: 3.6111vw; font-weight: 500; color: white; width: 20vw; height: 8.3333vw; background-color: black;}
+        }
+    }
+}
 
 /* 해더 */
 header{position: fixed; left: 0; bottom: 0; width: 100%; background-color: #f9f9f9; z-index: 100;

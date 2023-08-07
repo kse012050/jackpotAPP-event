@@ -5,8 +5,22 @@ $(document).ready(function(){
     // 텝
     $('.tabBtns').length && tab();
 
+    // 팝업
+    $('.popupBox').length && popup();
+
+    // 뉴스 상세페이지
     $('.newsDetailPage').length && newsDetailPage();
 })
+
+// 팝업
+function popup(){
+    $('.popupBox, .popupBox > div > div button').click(function(){
+        $('.popupBox').css('display','none');
+    })
+    $('.popupBox > div').click(function(e){
+        e.stopPropagation();
+    })
+}
 
 
 // 콤마
@@ -30,6 +44,7 @@ function tab(){
     })
 }
 
+// 뉴스 상세 페이지
 function newsDetailPage(){
     $('.copy_url').click(function(){
         const currentURL = window.location.href;
