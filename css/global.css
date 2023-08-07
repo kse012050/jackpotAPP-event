@@ -5,11 +5,61 @@
 mark{color: var(--colorPoint);}
 
 /* 이미지 */
-[class^="imgBox"]{aspect-ratio: 1; background-repeat: no-repeat; background-position: center; background-size: cover; text-indent: -9999px;}
+[class^="imgBox"],[class^="arrow"]{background-repeat: no-repeat; background-position: center; background-size: cover; font-size: 1px; text-indent: -9999px;}
+[class^="imgBox"]{aspect-ratio: 1;}
+[class^="arrow"]{aspect-ratio: 13 / 12;}
 [class^="imgBox"][class$="setting"]{width: 18px; background-image: url('../images/icon-setting.png');}
+[class^="arrow"][class$="left"]{width: 13px; background-image: url('../images/arrow-left.png');}
 
-[class$="Page"]{padding: 0 var(--spasing) 58px;
-    & h2{padding-top: 9px; font-size: 18px; font-weight: 700;}
+[class$="Page"]{padding: 0 var(--spasing) 98px;
+    & h2{font-size: 18px; font-weight: 700;
+        &:has(a){height: 45px; display: flex; align-items: center; position: sticky; top: 0; background-color: white; z-index: 100;
+            & a{margin-right: 10px;}
+        }
+        & + p{font-size: 14px; color: #929292; line-height: 20px; min-height: 40px;}
+    }
+    & h2:not(:has(a)), h2:has(a) + p{padding-top: 9px;}
+}
+
+/* 포인트 P */
+[data-point]::after{content: 'P';}
+
+/* 텝 버튼 */
+.tabBtns{display: flex; align-items: center; margin-block: 25px 10px;
+    & li{font-size: 13px; color: #929292; line-height: 28px; padding-inline: 12px; border: 1px solid #929292; border-radius: 100em;
+        &.active{color: white; background-color: var(--colorPoint); border: none;}
+        &:not(:last-child){margin-right: 5px;}
+    }
+}
+
+/* 게시판 공통 */
+.boardBox{
+    &:has(.topArea){
+        & .topArea, ul li{display: flex;}
+        & .topArea{font-size: 13px; font-weight: 500; line-height: 39px; background-color: #f5f5f5; border-radius: 10px;}
+        & ul li{font-size: 11px; line-height: 31px; border-bottom: 1px solid #eeeeee;
+            &:not(.add) p:last-child::before{content: '-';}
+            &.add p:last-child{color: var(--colorPoint);
+                &::before{content: '+';}
+            }
+        }
+    }
+}
+
+/* 페이저 */
+.pagerBox{display: flex; justify-content: center; align-items: center; margin-top: 30px;
+    & a{width: 28px;
+        &:first-child{background-image: url('../images/icon-prev.png'); margin-right: 17px;}
+        &:last-child{background-image: url('../images/icon-next.png'); margin-left: 17px;}
+    }
+    & p{font-size: 13px; font-weight: 500; color: #bcbcbc;
+        & b{color: var(--colorBasic);}
+    }
+}
+
+/* 텝 컨텐츠 */
+.tabContents > *{display: none;
+    &.active{display: block;}
 }
 
 

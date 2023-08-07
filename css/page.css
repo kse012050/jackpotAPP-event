@@ -11,3 +11,20 @@
     }
     & button{position: absolute; right: var(--spasing); top: 44px;}
 }
+
+/* 적립금 페이지 */
+.reserversPage{
+    & .pointArea{display: flex; flex-direction: column; align-items: center; padding: var(--spasing);  box-shadow: 0px 3px 10px rgba(26, 0, 0, 0.15); border-radius: 15px;
+        & strong{font-size: 13px; font-weight: 700; line-height: 19px; margin-bottom: 4px;}
+        & mark{font-size: 18px; font-weight: 700;
+            &::after{font-weight: 400;}
+        }
+    }
+    & .boardBox{
+        & :is(.topArea, ul li) > *{text-align: center; padding-inline: var(--spasing); box-sizing: border-box;
+            &:nth-child(1){flex: 100;}
+            &:nth-child(2){flex: 102;}
+            &:nth-child(3){flex: 118;}
+        }
+    }
+}
