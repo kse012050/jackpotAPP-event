@@ -11,17 +11,15 @@ mark{color: var(--colorPoint);}
 [class^="imgBox"][class$="setting"]{width: 18px; background-image: url('../images/icon-setting.png');}
 [class^="arrow"][class$="left"]{width: 13px; background-image: url('../images/arrow-left.png');}
 
-[class$="Page"]{padding: 0 var(--spasing) 98px;
+[class$="Page"]{padding-block: 0 98px; margin-inline: var(--spasing);
+    &:has(h2 a){padding-top: 45px;}
     & h2{font-size: 18px; font-weight: 700; line-height: 27px;
-        &:has(a){height: 45px; display: flex; align-items: center; position: sticky; top: 0; background-color: white; z-index: 100;
+        &:has(a){height: 45px; display: flex; align-items: center; position: fixed; left: 0; top: 0; width: 100%; padding-inline: var(--spasing); background-color: white; z-index: 100; box-sizing: border-box;
             & a{line-height: 1; margin-right: 10px;}
         }
         & + p{font-size: 14px; color: #929292; line-height: 20px; margin-bottom: 25px;}
     }
     & h2:not(:has(a)), h2:has(a) + p{padding-top: 9px;}
-    /* & h2{
-        &:is(:not(:has(a)),:has(a) + p){padding-top: 9px;}
-    } */
     & h2:not(:has(a)) + p{padding-top: 4px;}
 }
 

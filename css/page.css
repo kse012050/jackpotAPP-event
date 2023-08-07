@@ -45,3 +45,17 @@
         }
     }
 }
+
+
+/* 새소식 상세 페이지 */
+.newsDetailPage{ position: relative;
+    & img{width: 100%; padding-top: 14px;}
+    & div{position: absolute; left: 0; top: 194.4444vw; width: 100%; display: flex; align-items: center; gap: 3.6111vw;
+        & button{height: 10.2777vw; font-size: 3.3333vw; font-weight: 500; line-height: 1; border-radius: 1.6666vw;
+            &.copy_url{flex: 75; color: var(--color); border: 0.2778vw solid var(--color);}
+            &.kakao_invite{flex: 202; color: white; background-color: var(--color); display: flex; justify-content: center; align-items: center;
+                &::before{content: ''; width: 5.7222vw; aspect-ratio: 1; background: url('../images/icon-kakao.png') no-repeat center / cover; margin-bottom: -0.5555vw; margin-right: 1.3888vw;}
+            }
+        }
+    }
+}

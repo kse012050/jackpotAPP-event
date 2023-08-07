@@ -1,9 +1,11 @@
 $(document).ready(function(){
     // 콤마
-    $('[data-comma]').length && comma()
+    $('[data-comma]').length && comma();
 
     // 텝
-    $('.tabBtns').length && tab()
+    $('.tabBtns').length && tab();
+
+    $('.newsDetailPage').length && newsDetailPage();
 })
 
 
@@ -25,5 +27,21 @@ function tab(){
         $('.tabBtns > *, .tabContents > *').removeClass('active');
         $(this).addClass('active');
         // $('.tabContents > *').eq($(this).index()).addClass('active');
+    })
+}
+
+function newsDetailPage(){
+    $('.copy_url').click(function(){
+        const currentURL = window.location.href;
+        const tempInput = document.createElement('input');
+        tempInput.value = currentURL;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+        alert('URL이 복사되었습니다.');
+    })
+    $('.kakao_invite').click(function(){
+        alert('카카오톡 초대하기')
     })
 }
